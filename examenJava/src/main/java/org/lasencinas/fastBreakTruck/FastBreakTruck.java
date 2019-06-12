@@ -8,6 +8,8 @@ import org.lasencinas.item.bebida.subtipos.TurbulentJuice;
 import org.lasencinas.item.cereales.Cereales;
 import org.lasencinas.item.cereales.subtipos.Eyeholes;
 import org.lasencinas.item.cereales.subtipos.Smiggles;
+import org.lasencinas.item.toy.Toy;
+import org.lasencinas.item.toy.subtipos.Plumbus;
 import org.lasencinas.packing.Packing;
 import org.lasencinas.packing.objetos.Caja;
 import org.lasencinas.packing.objetos.Tubo;
@@ -36,5 +38,10 @@ public class FastBreakTruck {
         items.add(fleebJuice);
         Desayuno desayuno = new Desayuno(items);
         return desayuno;
+    }
+
+    public static void incluirJuguete(Desayuno eyeDes) {
+        Toy plumbus = new Plumbus(new Caja());
+        eyeDes.getItems().add(plumbus);
     }
 }

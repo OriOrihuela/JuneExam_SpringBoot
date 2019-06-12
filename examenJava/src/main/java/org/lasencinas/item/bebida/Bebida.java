@@ -13,6 +13,6 @@ public abstract class Bebida implements Item {
     /* ---- TO STRING ---- */
     @Override
     public String toString() {
-        return "Bebida{}";
+        return "";
     }
 }

@@ -25,14 +25,15 @@ public class App {
         smigDes.mostrarItems();
         System.out.print("Precio pedido: " + smigDes.getCoste());
 
-//        /**
-//         * Plumbus
-//         */
-//
-//        eyeDes = FastBreakTruck.prepararEyeHoles();
-//        FastBreakTruck.incluirJuguete(eyeDes);
-//        System.out.print("\nEyeholes con plumbus!");
-//        eyeDes.mostrarItems();
-//        System.out.print("Precio pedido: " + eyeDes.getCoste());
+        /**
+         * Plumbus
+         */
+
+        eyeDes = FastBreakTruck.prepararEyeHoles();
+        FastBreakTruck.incluirJuguete(eyeDes);
+        System.out.print("\nEyeholes con toy!");
+        System.out.println();
+        eyeDes.mostrarItems();
+        System.out.print("Precio pedido: " + eyeDes.getCoste());
     }
 }

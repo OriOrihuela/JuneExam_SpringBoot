@@ -2,23 +2,23 @@ package org.lasencinas.desayuno;
 
 import org.lasencinas.item.Item;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public class Desayuno {
 
     /* ---- PROPERTIES ---- */
-    private List<Item> items = new ArrayList<>();
+    private Set<Item> items = null;
+    private double totalPrice = 0d;
 
 
     /* ---- GETTERs ---- */
-    public List<Item> getItems() {
+    public Set<Item> getItems() {
         return items;
     }
 
 
     /* ---- SETTERS ---- */
-    public void setItems(List<Item> items) {
+    public void setItems(Set<Item> items) {
         this.items = items;
     }
 
@@ -30,9 +30,19 @@ public class Desayuno {
     /* ---- MAIN BEHAVIOURS ---- */
     public void mostrarItems() {
 
+        for (Item item :
+                getItems()) {
+            System.out.println(item);
+        }
+
     }
 
     public Float getCoste() {
+        float price = 0;
+        for (Item item :
+                getItems()) {
+            //getItems()
+        }
         return null;
     }
 }

@@ -48,6 +48,13 @@ public class Conductor {
         this.tarjeta = tarjetaCredito;
     }
 
+    public Conductor(String tarjeta, String nombre, String matricula, String modelo) {
+        this.tarjeta = tarjeta;
+        this.nombre = nombre;
+        this.matricula = matricula;
+        this.modelo = modelo;
+    }
+
     /**
      * Getters y setters
      */

@@ -223,21 +223,21 @@ public class CotxoxApplicationTests {
 		Assert.assertEquals(3, conductoresLibres.size());
 		Assert.assertEquals(false, conductoresLibres.get(1).isOcupado());
 	}
-//
-//	/**
-//	 * Implementa un mètode en el servei de l'entitat Conductor
-//	 * que retorni una llista de conductores lliures
-//	 */
-//
-//	@Test
-//	public void tets_conductor_libre_service() {
-//
-//		conductorService.init();
-//
-//		Conductor conductora = conductorService.recuperarConductorLibre();
-//		Assert.assertNotNull(conductora);
-//		Assert.assertEquals(false, conductora.isOcupado());
-//	}
+
+	/**
+	 * Implementa un mètode en el servei de l'entitat Conductor
+	 * que retorni una llista de conductores lliures
+	 */
+
+	@Test
+	public void tets_conductor_libre_service() {
+
+		conductorService.init();
+
+		Conductor conductora = conductorService.recuperarConductorLibre();
+		Assert.assertNotNull(conductora);
+		Assert.assertEquals(false, conductora.isOcupado());
+	}
 //
 //	/**
 //	 * Assigna una conductora a una carrera que ja existeix a la BBDD

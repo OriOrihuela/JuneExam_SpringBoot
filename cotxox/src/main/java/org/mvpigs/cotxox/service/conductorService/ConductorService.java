@@ -5,6 +5,8 @@ import org.mvpigs.cotxox.repo.ConductorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ConductorService {
 
@@ -26,5 +28,19 @@ public class ConductorService {
         Conductor conductor1 = new Conductor("3333333333333333", "Cici", "7JKK555", "Mercedes A");
         conductorRepo.save(conductor);
         conductorRepo.save(conductor1);
+    }
+
+    public Conductor recuperarConductorLibre() {
+        List<Conductor> conductores = conductorRepo.findByOcupado(0);
+        for (Conductor conductor :
+                conductores) {
+            if (conductor.isOcupado()) {
+                System.out.println("The condcutor cannot be returned, he/she is busy");
+            }
+            else {
+                return conductor;
+            }
+        }
+        return null;
     }
 }

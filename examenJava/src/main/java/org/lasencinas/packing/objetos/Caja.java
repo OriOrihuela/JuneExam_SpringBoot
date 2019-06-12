@@ -21,4 +21,9 @@ public class Caja implements Packing {
     public String envoltorio() {
         return envoltorio;
     }
+
+    @Override
+    public String toString() {
+        return "caja";
+    }
 }

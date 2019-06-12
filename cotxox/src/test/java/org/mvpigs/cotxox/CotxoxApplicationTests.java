@@ -8,7 +8,9 @@ import org.junit.runner.RunWith;
 import org.mvpigs.cotxox.domain.Carrera;
 import org.mvpigs.cotxox.domain.Conductor;
 import org.mvpigs.cotxox.repo.CarreraRepo;
+import org.mvpigs.cotxox.repo.ConductorRepo;
 import org.mvpigs.cotxox.service.carreraService.CarreraService;
+import org.mvpigs.cotxox.service.conductorService.ConductorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.repository.Repository;
@@ -45,12 +47,12 @@ public class CotxoxApplicationTests {
 
 	@Autowired(required=false)
 	CarreraService carreraService;
-//
-//	@Autowired(required=false)
-//	ConductorRepo conductorService;
-//
-//	@Autowired(required=false)
-//	ConductorService conductorService;
+
+	@Autowired(required=false)
+	ConductorRepo conductorRepo;
+
+	@Autowired(required=false)
+	ConductorService conductorService;
 
 	@PersistenceContext
 	private EntityManager em;
@@ -115,28 +117,28 @@ public class CotxoxApplicationTests {
 		// seria necessari afegir el conductor però anem a testear primer repo
 		Assert.assertEquals("1234567890123456", carreraService.recuperaCarrera(idCarrera).getTarjetaCredito());
 	}
-//
-//	/**
-//	 * Crea una classe ConductorRepo que sigui un repositori
-//	 * Spring Data per l'entitat Conductor
-//	 */
-//	@Test
-//	public void test_ConductorRepo_es_repositori() {
-//		Assert.assertNotNull(conductorService);
-//		Assert.assertTrue(conductorService instanceof Repository);
-//	}
-//
-//	/**
-//	 * Implementa el servei de l'entitat conductor i el seu repositori
-//	 * per a recuperar un conductor segon la seva targeta de crèdit.
-//	 */
-//
-//	@Test
-//	public void test_recuperar_conductor() {
-//		Conductor conductor = conductorService.recuperarConductor("1111111111111111");
-//		Assert.assertNotNull(conductor);
-//		Assert.assertEquals("Samantha", conductor.getNombre());
-//	}
+
+	/**
+	 * Crea una classe ConductorRepo que sigui un repositori
+	 * Spring Data per l'entitat Conductor
+	 */
+	@Test
+	public void test_ConductorRepo_es_repositori() {
+		Assert.assertNotNull(conductorService);
+		Assert.assertTrue(conductorService instanceof Repository);
+	}
+
+	/**
+	 * Implementa el servei de l'entitat conductor i el seu repositori
+	 * per a recuperar un conductor segon la seva targeta de crèdit.
+	 */
+
+	@Test
+	public void test_recuperar_conductor() {
+		Conductor conductor = conductorService.recuperarConductor("1111111111111111");
+		Assert.assertNotNull(conductor);
+		Assert.assertEquals("Samantha", conductor.getNombre());
+	}
 //
 //	/**
 //	 * Completa el codi del cas test test_save_conductor()

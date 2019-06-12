@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mvpigs.cotxox.domain.Carrera;
 import org.mvpigs.cotxox.domain.Conductor;
+import org.mvpigs.cotxox.repo.CarreraRepo;
+import org.mvpigs.cotxox.service.carreraService.CarreraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.repository.Repository;
@@ -39,14 +41,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 public class CotxoxApplicationTests {
 
-//	@Autowired(required=false)
-//	CarreraRepo carreraRepo;
+	@Autowired(required=false)
+	CarreraRepo carreraRepo;
+
+	@Autowired(required=false)
+	CarreraService carreraService;
 //
 //	@Autowired(required=false)
-//	CarreraService carreraService;
-//
-//	@Autowired(required=false)
-//	ConductorRepo conductorRepo;
+//	ConductorRepo conductorService;
 //
 //	@Autowired(required=false)
 //	ConductorService conductorService;
@@ -84,24 +86,24 @@ public class CotxoxApplicationTests {
 		Assert.assertEquals("Samantha", carrera.getConductor().getNombre());
 	}
 
-//	/**
-//	 * Crea una classe CarreraRepo que sigui un repositori
-//	 * Spring Data per l'entitat Carrera
-//	 */
-//	@Test
-//	public void test_RepoCarerra_es_repositori() {
-//		Assert.assertNotNull(carreraRepo);
-//		Assert.assertTrue(carreraRepo instanceof Repository);
-//	}
-//
-//	/**
-//	 * Crea una classe CarreraService que sigui un component
-//	 * amb el rol de Service
-//	 */
-//	@Test
-//	public void test_carreraService_es_component() {
-//		Assert.assertNotNull(carreraService);
-//	}
+	/**
+	 * Crea una classe CarreraRepo que sigui un repositori
+	 * Spring Data per l'entitat Carrera
+	 */
+	@Test
+	public void test_RepoCarerra_es_repositori() {
+		Assert.assertNotNull(carreraRepo);
+		Assert.assertTrue(carreraRepo instanceof Repository);
+	}
+
+	/**
+	 * Crea una classe CarreraService que sigui un component
+	 * amb el rol de Service
+	 */
+	@Test
+	public void test_carreraService_es_component() {
+		Assert.assertNotNull(carreraService);
+	}
 //
 //	/**
 //	 * Utilitza els mètodes del repositori de carrera
@@ -121,8 +123,8 @@ public class CotxoxApplicationTests {
 //	 */
 //	@Test
 //	public void test_ConductorRepo_es_repositori() {
-//		Assert.assertNotNull(conductorRepo);
-//		Assert.assertTrue(conductorRepo instanceof Repository);
+//		Assert.assertNotNull(conductorService);
+//		Assert.assertTrue(conductorService instanceof Repository);
 //	}
 //
 //	/**
@@ -204,7 +206,7 @@ public class CotxoxApplicationTests {
 //
 //		// només n'hi ha una conductora, Samantha, a la BBDD
 //
-//		List<Conductor> conductoresLibres = conductorRepo.findByOcupado(0);
+//		List<Conductor> conductoresLibres = conductorService.findByOcupado(0);
 //		Assert.assertNotNull(conductoresLibres);
 //		Assert.assertEquals("Samantha", conductoresLibres.get(0).getNombre());
 //		Assert.assertEquals(false, conductoresLibres.get(0).isOcupado());
@@ -212,7 +214,7 @@ public class CotxoxApplicationTests {
 //		// introduïm més conductores a la BBDD
 //
 //		conductorService.init();
-//		conductoresLibres = conductorRepo.findByOcupado(0);
+//		conductoresLibres = conductorService.findByOcupado(0);
 //		Assert.assertEquals(3, conductoresLibres.size());
 //		Assert.assertEquals(false, conductoresLibres.get(1).isOcupado());
 //	}

@@ -21,4 +21,8 @@ public class CarreraService {
     public Carrera recuperaCarrera(Long idCarrera) {
         return carreraRepo.findOne(idCarrera);
     }
+
+    public void updateCarrera(Carrera carrera) {
+
+    }
 }

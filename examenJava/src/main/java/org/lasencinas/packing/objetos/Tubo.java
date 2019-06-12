@@ -8,6 +8,9 @@ public class Tubo implements Packing {
     private String envoltorio = null;
 
     /* ---- CONSTRUCTOR ---- */
+    public Tubo() {
+    }
+
     public Tubo(String envoltorio) {
         this.envoltorio = envoltorio;
     }
@@ -17,5 +20,10 @@ public class Tubo implements Packing {
     @Override
     public String envoltorio() {
         return envoltorio;
+    }
+
+    @Override
+    public String toString() {
+        return "tubo";
     }
 }

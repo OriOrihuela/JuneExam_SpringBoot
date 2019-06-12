@@ -10,6 +10,6 @@ public abstract class Cereales implements Item {
 
     @Override
     public String toString() {
-        return "Cereales{}";
+        return "";
     }
 }

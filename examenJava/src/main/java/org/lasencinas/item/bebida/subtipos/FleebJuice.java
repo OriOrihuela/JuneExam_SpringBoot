@@ -2,28 +2,33 @@ package org.lasencinas.item.bebida.subtipos;
 
 import org.lasencinas.item.bebida.Bebida;
 import org.lasencinas.packing.Packing;
+import org.lasencinas.packing.objetos.Tubo;
 
 public class FleebJuice extends Bebida {
 
+    /* ---- PROPERTIES ---- */
+    private Packing tubo = null;
+    private float precio = 35;
+
     /* ---- CONSTRUCTORS ---- */
-    public FleebJuice() {
+    public FleebJuice(Packing tubo) {
+        this.tubo = new Tubo("FleebJuice");
     }
-    /* ---- PROPERTIES OF THE CLASS ---- */
 
 
     /* ---- MAIN BEHAVIORUS ---- */
     @Override
     public String nombre() {
-        return null;
+        return tubo.envoltorio();
     }
 
     @Override
     public Packing empaquetado() {
-        return null;
+        return tubo;
     }
 
     @Override
     public Float pvp() {
-        return null;
+        return precio;
     }
 }

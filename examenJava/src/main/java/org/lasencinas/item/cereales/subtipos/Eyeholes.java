@@ -33,9 +33,8 @@ public class Eyeholes extends Cereales {
 
     @Override
     public String toString() {
-        return "Eyeholes{" +
-                "caja=" + caja +
-                ", precio=" + precio +
-                "} " + super.toString();
+        return "Item: " + nombre() +
+                ", Empaquetado: " + empaquetado() +
+                ", precio = " + pvp() + super.toString();
     }
 }

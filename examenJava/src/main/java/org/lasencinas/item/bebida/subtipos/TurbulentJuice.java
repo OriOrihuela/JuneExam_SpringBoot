@@ -31,4 +31,11 @@ public class TurbulentJuice extends Bebida {
     public Float pvp() {
         return precio;
     }
+
+    @Override
+    public String toString() {
+        return "Item: " + nombre() +
+                ", Empaquetado: " + empaquetado() +
+                ", precio = " + pvp()  + super.toString();
+    }
 }

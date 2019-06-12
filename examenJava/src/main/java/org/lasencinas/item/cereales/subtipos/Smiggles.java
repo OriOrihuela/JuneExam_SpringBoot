@@ -34,9 +34,8 @@ public class Smiggles extends Cereales {
 
     @Override
     public String toString() {
-        return "Smiggles{" +
-                "caja=" + caja +
-                ", precio=" + precio +
-                "} " + super.toString();
+        return "Item: " + nombre() +
+                ", Empaquetado: " + empaquetado() +
+                ", precio = " + pvp() + super.toString();
     }
 }

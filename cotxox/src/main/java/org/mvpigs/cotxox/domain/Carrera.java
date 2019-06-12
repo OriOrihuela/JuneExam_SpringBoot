@@ -54,7 +54,15 @@ public class Carrera {
 	public Carrera(String tarjetaCredito){
 		this.tarjetaCredito = tarjetaCredito;
 	}
-	
+
+	public Carrera(String tarjeta, String origen, String destino, int distancia, int coste) {
+        this.tarjetaCredito = tarjeta;
+        this.origen = origen;
+        this.destino = destino;
+        this.distancia = distancia;
+        this.costeTotal = coste;
+	}
+
 	/** 
 	 * Getters y setters
 	 */

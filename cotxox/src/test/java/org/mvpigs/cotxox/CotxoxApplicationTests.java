@@ -1,6 +1,5 @@
 package org.mvpigs.cotxox;
 
-import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.junit.Assert;
@@ -36,7 +35,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 	"delete from t_carreras",
 	"delete from t_conductores",
 	"insert into t_conductores (co_tarjeta_credito, co_nombre, co_modelo, co_matricula, co_valoracion_media, co_ocupado) values ('1111111111111111' , 'Samantha', 'Chevy Malibu', '4ABC123', 0, 0)",
-	"insert into t_carreras (c_tarjeta_credito, c_origen, c_destino, c_distancia, c_tiempo_esperado, c_tiempo_carrera, c_coste_total, c_propina, c_conductor) values ('4916119711304546', 'Aeroport Son Sant Joan', 'Magaluf', 7.75, 10, 0, 0, 0, '1111111111111111')"			
+	"insert into t_carreras (c_id, c_tarjeta_credito, c_origen, c_destino, c_distancia, c_tiempo_esperado, c_tiempo_carrera, c_coste_total, c_propina, c_conductor) values (1, '4916119711304546', 'Aeroport Son Sant Joan', 'Magaluf', 7.75, 10, 0, 0, 0, '1111111111111111')"
 })
 
 public class CotxoxApplicationTests {
@@ -104,18 +103,18 @@ public class CotxoxApplicationTests {
 	public void test_carreraService_es_component() {
 		Assert.assertNotNull(carreraService);
 	}
-//
-//	/**
-//	 * Utilitza els mètodes del repositori de carrera
-//	 * i del servei carrera per a fer persistent una carrera
-//	 */
-//
-//	@Test
-//	public void test_save_carrera() {
-//		Long idCarrera = carreraService.crearCarrera("1234567890123456", "Parc de Ses Estacions", "Festival Park", 15, 18);
-//		// seria necessari afegir el conductor però anem a testear primer repo
-//		Assert.assertEquals("1234567890123456", carreraService.recuperaCarrera(idCarrera).getTarjetaCredito());
-//	}
+
+	/**
+	 * Utilitza els mètodes del repositori de carrera
+	 * i del servei carrera per a fer persistent una carrera
+	 */
+
+	@Test
+	public void test_save_carrera() {
+		Long idCarrera = carreraService.crearCarrera("1234567890123456", "Parc de Ses Estacions", "Festival Park", 15, 18);
+		// seria necessari afegir el conductor però anem a testear primer repo
+		Assert.assertEquals("1234567890123456", carreraService.recuperaCarrera(idCarrera).getTarjetaCredito());
+	}
 //
 //	/**
 //	 * Crea una classe ConductorRepo que sigui un repositori

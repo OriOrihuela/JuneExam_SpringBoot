@@ -8,10 +8,19 @@ public class Desayuno {
 
     /* ---- PROPERTIES ---- */
     private Set<Item> items = null;
-    private double totalPrice = 0d;
+    private float totalPrice = 0;
 
 
-    /* ---- GETTERs ---- */
+    /* ---- CONSTRUCTORS ---- */
+    public Desayuno() {
+    }
+
+    public Desayuno(Set<Item> items) {
+        this.items = items;
+    }
+
+
+    /* ---- GETTERS ---- */
     public Set<Item> getItems() {
         return items;
     }
@@ -22,27 +31,21 @@ public class Desayuno {
         this.items = items;
     }
 
-    /* ---- CONSTRUCTOR ---- */
-    public Desayuno() {
-    }
-
 
     /* ---- MAIN BEHAVIOURS ---- */
     public void mostrarItems() {
-
         for (Item item :
                 getItems()) {
             System.out.println(item);
         }
-
     }
 
     public Float getCoste() {
-        float price = 0;
         for (Item item :
                 getItems()) {
-            //getItems()
+            this.totalPrice += item.pvp();
+
         }
-        return null;
+        return this.totalPrice;
     }
 }

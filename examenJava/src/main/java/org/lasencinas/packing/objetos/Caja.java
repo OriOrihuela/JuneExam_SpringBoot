@@ -11,10 +11,14 @@ public class Caja implements Packing {
     public Caja() {
     }
 
+    public Caja(String envoltorio ) {
+        this.envoltorio = envoltorio;
+    }
+
 
     /* ---- BEHAVIOURS ---- */
     @Override
     public String envoltorio() {
-        return null;
+        return envoltorio;
     }
 }

@@ -11,6 +11,9 @@ public class Eyeholes extends Cereales {
     private float precio = 25;
 
     /* ---- CONSTRUCTOR ---- */
+    public Eyeholes() {
+
+    }
     public Eyeholes(Packing caja) {
         this.caja = new Caja("Eyeholes");
     }
